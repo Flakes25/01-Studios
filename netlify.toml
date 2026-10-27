@@ -1,0 +1,4 @@
+[build.environment]
+  # The Supabase project URL is public and is also used by the browser client.
+  # Keep scanning enabled for credentials, including SUPABASE_SERVICE_KEY.
+  SECRETS_SCAN_OMIT_KEYS = "SUPABASE_URL"
