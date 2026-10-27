@@ -1,0 +1,2 @@
+export const metadata={title:'About'}
+export default function A(){return <section className="px-[5vw] py-16"><h1 className="text-7xl">We keep the moment still.</h1><div className="mt-10 max-w-2xl space-y-4 text-zinc-300"><p>01 Studios is a small Pampanga team of photographers and filmmakers who care how a day felt as much as how it looked.</p><p className="text-zinc-500">Placeholder: replace with your studio story, mission, team portraits, behind-the-scenes gallery and equipment list.</p></div></section>}

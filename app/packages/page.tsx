@@ -1,0 +1,7 @@
+import Link from 'next/link'
+import {PK,EXTRAS,peso} from '@/lib/data'
+export const metadata={title:'Packages'}
+export default function P(){return <section className="px-[5vw] py-16"><h1 className="text-7xl">Packages</h1><p className="my-6 border-l-2 border-zinc-600 pl-4 text-zinc-400">All prices are placeholders. Edit lib/data.ts before launch.</p>
+ {['Photography','Videography','Bundles'].map(g=><div key={g}><h2 className="mb-6 mt-14 text-4xl">{g}</h2><div className="grid gap-px border border-zinc-800 bg-zinc-800 md:grid-cols-3">{PK.filter(p=>p.g===g).map(p=><div key={p.name} className={`relative flex flex-col p-8 ${p.pop?'bg-zinc-900':'bg-[#0c0c0c]'}`}>{p.pop?<span className="absolute right-4 top-4 rounded-full border px-3 text-xs">Most popular</span>:null}<h3 className="text-3xl">{p.name}</h3><div className="my-2 font-serif text-4xl">{peso(p.price)} <small className="font-sans text-xs text-zinc-500">placeholder</small></div>
+ <ul className="mb-6 flex-1 list-disc pl-5 text-sm text-zinc-400"><li>{p.hrs} hours coverage</li><li>{p.crew}</li>{p.photos?<li>{p.photos} edited photos</li>:null}{p.video?<li>{p.video}</li>:null}<li>Delivered in {p.days} days</li></ul><Link href={`/book?pkg=${encodeURIComponent(p.name)}`} className={`btn ${p.pop?'f':''}`}>Book this package</Link></div>)}</div></div>)}
+ <h2 className="mb-6 mt-14 text-4xl">Extras</h2><ul className="grid gap-2 text-zinc-400 md:grid-cols-2">{EXTRAS.map(e=><li key={e}>{e}, price on request</li>)}</ul></section>}
