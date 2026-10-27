@@ -1,5 +1,5 @@
 // EDIT HERE: studio details, prices, photos, FAQ
-export const S={name:'01 Studios',loc:'Pampanga, Philippines',email:'hello@example.com',phone:'+63 900 000 0000',hours:'Mon–Sat, 9:00 AM–6:00 PM',fb:'https://facebook.com/',ig:'https://instagram.com/'}
+export const S={name:'01 Studios',loc:'Pampanga, Philippines',email:'inquiries01studios@gmail.com',phone:'+63 900 000 0000',hours:'Mon–Sat, 9:00 AM–6:00 PM',fb:'https://www.facebook.com/people/01-Studios/61592618507301/',ig:'https://instagram.com/'}
 export const CATS=['Weddings','Debuts','Portraits','Graduation','Events','Fashion','Commercial','Creative']
 // Replace `src` with real image paths in /public/photos (e.g. '/photos/wedding-1.jpg') and write real alt text.
 export const PHOTOS=Array.from({length:16},(_,n)=>({id:n,title:`Placeholder ${n+1}`,cat:CATS[n%8],src:'' as string,alt:`Placeholder photo ${n+1}`,h:[300,420,360,480][n%4]}))
