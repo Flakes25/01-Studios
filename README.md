@@ -12,6 +12,11 @@ Inquiries then appear in Supabase Table Editor > inquiries. Email alerts: add Re
 Without Supabase keys, inquiries are only logged to the server console.
 ## Deploy
 Push to GitHub, import the repo in Vercel, add the two env vars, deploy.
+
+### Netlify environment variables
+Set `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` in Netlify's environment variables for the browser client. Set `SUPABASE_SERVICE_KEY` for the server-side inquiry endpoint; never give this key a `NEXT_PUBLIC_` prefix. The endpoint accepts `SUPABASE_URL` or falls back to `NEXT_PUBLIC_SUPABASE_URL`.
+
+The Supabase project URL is intentionally public: Next.js includes `NEXT_PUBLIC_SUPABASE_URL` in the browser bundle, and photo URLs may also contain it. When `SUPABASE_URL` has the same value, Netlify's secrets scan can flag that public URL. `netlify.toml` excludes only `SUPABASE_URL` from scanning and leaves scanning enabled for all other variables, including the service key. Keep actual credentials in Netlify's environment variables or an ignored `.env.local` file.
 ## Not built yet
 Admin dashboard (login, uploads, editing), privacy page, analytics, cookie banner, page transitions. Use the Supabase dashboard meanwhile.
 This scaffold was written without running `npm install`. Run `npm run build` once and report any errors.
